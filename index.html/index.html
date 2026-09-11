@@ -3,550 +3,188 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>M.G.FIRES 🔥 | Youth Organization</title>
-  <meta name="description" content="M.G.FIRES - Youth organization, unity, culture and Ganesh Chaturthi celebrations.">
+  <meta name="theme-color" content="#070707">
+  <meta name="description" content="M.G.FIRES — Youth, unity, culture, celebration and memories.">
+  <title>M.G.FIRES 🔥 | One Group. One Spirit.</title>
 
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
 
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #050505;
-      color: #fff;
-      overflow-x: hidden;
-    }
-
-    :root {
-      --orange: #ff7a00;
-      --gold: #ffb52e;
-      --black: #050505;
-      --dark: #101010;
-      --card: rgba(255,255,255,0.07);
-    }
-
-    /* Navigation */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      padding: 14px 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(0,0,0,0.72);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,122,0,0.25);
-    }
-
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: white;
-      text-decoration: none;
-      font-weight: 800;
-      letter-spacing: 1px;
-    }
-
-    .nav-logo img {
-      width: 46px;
-      height: 46px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 1px solid var(--gold);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 22px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 14px;
-      transition: 0.3s;
-    }
-
-    .nav-links a:hover { color: var(--gold); }
-
-    .menu-btn {
-      display: none;
-      background: none;
-      border: 1px solid var(--orange);
-      color: white;
-      padding: 7px 10px;
-      border-radius: 8px;
-      font-size: 20px;
-    }
-
-    /* Hero */
-    .hero {
-      min-height: 100vh;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      overflow: hidden;
-    }
-
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(0,0,0,0.58), rgba(0,0,0,0.82)),
-        url("ganesh1.jpg");
-      background-size: cover;
-      background-position: center;
-      animation: cinematicZoom 14s ease-in-out infinite alternate;
-      filter: saturate(1.05);
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at center, transparent 15%, rgba(0,0,0,0.55) 90%);
-      pointer-events: none;
-    }
-
-    @keyframes cinematicZoom {
-      from { transform: scale(1); }
-      to { transform: scale(1.10); }
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 850px;
-      padding: 110px 20px 40px;
-      animation: fadeUp 1.2s ease both;
-    }
-
-    .hero-logo {
-      width: 180px;
-      max-width: 45vw;
-      border-radius: 18px;
-      box-shadow: 0 0 50px rgba(255,140,0,0.28);
-      margin-bottom: 22px;
-    }
-
-    .eyebrow {
-      color: var(--gold);
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      font-size: 12px;
-      margin-bottom: 12px;
-    }
-
-    h1 {
-      font-size: clamp(42px, 8vw, 86px);
-      line-height: 0.95;
-      margin-bottom: 20px;
-      text-shadow: 0 0 35px rgba(255,122,0,0.35);
-    }
-
-    .hero p {
-      color: #ddd;
-      font-size: clamp(16px, 2vw, 21px);
-      line-height: 1.6;
-      max-width: 650px;
-      margin: 0 auto 28px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 13px 24px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, var(--orange), var(--gold));
-      color: #080808;
-      font-weight: 800;
-      text-decoration: none;
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 10px 30px rgba(255,122,0,0.22);
-      transition: transform .3s, box-shadow .3s;
-    }
-
-    .btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 14px 40px rgba(255,122,0,0.35);
-    }
-
-    .btn.secondary {
-      margin-left: 10px;
-      background: transparent;
-      color: white;
-      border: 1px solid rgba(255,181,46,0.7);
-      box-shadow: none;
-    }
-
-    /* Sections */
-    section {
-      padding: 90px 7%;
-      position: relative;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 45px;
-    }
-
-    .section-title span {
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-size: 12px;
-    }
-
-    .section-title h2 {
-      font-size: clamp(30px, 5vw, 52px);
-      margin-top: 8px;
-    }
-
-    .section-title p {
-      color: #aaa;
-      max-width: 650px;
-      margin: 12px auto 0;
-      line-height: 1.6;
-    }
-
-    .about {
-      background:
-        linear-gradient(rgba(5,5,5,.90), rgba(5,5,5,.96)),
-        url("ganesh2.jpg") center/cover fixed;
-    }
-
-    .about-grid, .feature-grid, .gallery-grid {
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 35px;
-      align-items: center;
-    }
-
-    .about-image {
-      width: 100%;
-      border-radius: 20px;
-      border: 1px solid rgba(255,122,0,.35);
-      box-shadow: 0 20px 60px rgba(0,0,0,.45);
-    }
-
-    .about-text p {
-      color: #ccc;
-      line-height: 1.8;
-      margin-bottom: 18px;
-    }
-
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid rgba(255,122,0,.18);
-      padding: 26px;
-      border-radius: 18px;
-      backdrop-filter: blur(10px);
-      transition: .35s;
-    }
-
-    .card:hover {
-      transform: translateY(-7px);
-      border-color: rgba(255,181,46,.65);
-      box-shadow: 0 15px 40px rgba(255,122,0,.12);
-    }
-
-    .card .icon { font-size: 32px; margin-bottom: 14px; }
-    .card h3 { margin-bottom: 10px; }
-    .card p { color: #aaa; line-height: 1.6; }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-    }
-
-    .gallery-grid img {
-      width: 100%;
-      height: 520px;
-      object-fit: cover;
-      border-radius: 18px;
-      border: 1px solid rgba(255,122,0,.25);
-      transition: .5s;
-    }
-
-    .gallery-grid img:hover {
-      transform: scale(1.015);
-      box-shadow: 0 20px 50px rgba(255,122,0,.18);
-    }
-
-    .join {
-      text-align: center;
-      background: linear-gradient(135deg, #0c0c0c, #1a0b00);
-      border-top: 1px solid rgba(255,122,0,.18);
-      border-bottom: 1px solid rgba(255,122,0,.18);
-    }
-
-    .join-box {
-      max-width: 750px;
-      margin: auto;
-      padding: 45px 25px;
-      border-radius: 25px;
-      background: rgba(255,255,255,.05);
-      border: 1px solid rgba(255,181,46,.22);
-    }
-
-    .join-box p {
-      color: #bbb;
-      line-height: 1.7;
-      margin: 15px auto 25px;
-    }
-
-    footer {
-      padding: 35px 7%;
-      text-align: center;
-      color: #777;
-      background: #020202;
-    }
-
-    footer strong { color: var(--gold); }
-
-    /* Scroll animation */
-    .reveal {
-      opacity: 0;
-      transform: translateY(35px);
-      transition: opacity .8s ease, transform .8s ease;
-    }
-
-    .reveal.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Mobile */
-    @media (max-width: 760px) {
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 74px;
-        left: 5%;
-        right: 5%;
-        padding: 18px;
-        background: rgba(5,5,5,.97);
-        border: 1px solid rgba(255,122,0,.25);
-        border-radius: 15px;
-        flex-direction: column;
-      }
-
-      .nav-links.open { display: flex; }
-      .menu-btn { display: block; }
-
-      .about-grid,
-      .feature-grid,
-      .gallery-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .gallery-grid img {
-        height: 480px;
-      }
-
-      .btn.secondary {
-        margin-left: 0;
-        margin-top: 10px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+  <div class="noise"></div>
 
-  <nav>
-    <a class="nav-logo" href="#home">
-      <img src="mgfires-logo.jpg" alt="M.G.FIRES logo">
-      <span>M.G.FIRES 🔥</span>
+  <header class="site-header" id="top">
+    <a class="brand" href="#home" aria-label="M.G.FIRES home">
+      <span class="brand-mark">🔥</span>
+      <span>
+        <strong>M.G.FIRES</strong>
+        <small>YOUTH ORGANIZATION</small>
+      </span>
     </a>
 
-    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
 
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#home" onclick="closeMenu()">Home</a></li>
-      <li><a href="#about" onclick="closeMenu()">About</a></li>
-      <li><a href="#activities" onclick="closeMenu()">Activities</a></li>
-      <li><a href="#ganesh" onclick="closeMenu()">Ganesh Chaturthi</a></li>
-      <li><a href="#join" onclick="closeMenu()">Join Us</a></li>
-    </ul>
-  </nav>
-
-  <header class="hero" id="home">
-    <div class="hero-bg"></div>
-
-    <div class="hero-content">
-      <img class="hero-logo" src="mgfires-logo.jpg" alt="M.G.FIRES logo">
-
-      <div class="eyebrow">Youth • Unity • Culture • Celebration</div>
-
-      <h1>M.G.FIRES 🔥</h1>
-
-      <p>
-        A youth organization built on unity, friendship, culture and
-        unforgettable memories — celebrating Ganesh Chaturthi and
-        coming together every year.
-      </p>
-
-      <a class="btn" href="#about">Explore M.G.FIRES</a>
-      <a class="btn secondary" href="#join">Join Us</a>
-    </div>
+    <nav class="nav" id="mainNav">
+      <a href="#home">Home</a>
+      <a href="#story">Our Story</a>
+      <a href="#events">Events</a>
+      <a href="#memories">Memories</a>
+      <a href="#join" class="nav-cta">Join Us</a>
+    </nav>
   </header>
 
-  <section class="about" id="about">
-    <div class="section-title reveal">
-      <span>Who We Are</span>
-      <h2>One Group. One Spirit.</h2>
-      <p>Our website will keep the story, people and memories of M.G.FIRES in one place.</p>
-    </div>
-
-    <div class="about-grid reveal">
-      <img class="about-image" src="ganesh2.jpg" alt="Ganesh Chaturthi celebration">
-
-      <div class="about-text">
-        <p>
-          M.G.FIRES is a youth organization where young people come together
-          for friendship, unity, cultural activities and community celebrations.
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-orb orb-one"></div>
+      <div class="hero-orb orb-two"></div>
+      <div class="hero-content">
+        <p class="eyebrow"><span></span> YOUTH • UNITY • CULTURE</p>
+        <h1>ONE GROUP.<br><em>ONE SPIRIT.</em></h1>
+        <p class="hero-copy">
+          Welcome to M.G.FIRES — a place for friendship, celebration,
+          culture and the memories we create together.
         </p>
-
-        <p>
-          Ganesh Chaturthi is one of our important annual celebrations.
-          This website will preserve our yearly records, photographs,
-          activities and memories for the future.
-        </p>
-
-        <a class="btn" href="#ganesh">View Celebration</a>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#memories">Explore Memories <span>↗</span></a>
+          <a class="btn btn-ghost" href="#story">Our Story</a>
+        </div>
+        <div class="hero-meta">
+          <div><strong>∞</strong><span>Memories</span></div>
+          <div><strong>01</strong><span>Community</span></div>
+          <div><strong>🔥</strong><span>Spirit</span></div>
+        </div>
       </div>
-    </div>
-  </section>
+      <div class="hero-scroll"><span></span> SCROLL TO EXPLORE</div>
+    </section>
 
-  <section id="activities">
-    <div class="section-title reveal">
-      <span>What We Do</span>
-      <h2>Our Activities</h2>
-      <p>More sections can be added here as the organization grows.</p>
-    </div>
-
-    <div class="feature-grid">
-      <div class="card reveal">
-        <div class="icon">👥</div>
-        <h3>Youth Members</h3>
-        <p>Build a member directory and allow members to create their profiles later.</p>
+    <section class="story section" id="story">
+      <div class="section-kicker">WHO WE ARE</div>
+      <div class="story-grid">
+        <div>
+          <h2>More than a group.<br><em>It's a shared story.</em></h2>
+        </div>
+        <div class="story-copy">
+          <p>
+            M.G.FIRES brings young people together through friendship,
+            unity, cultural activities and community celebrations.
+          </p>
+          <p>
+            Every event becomes a chapter — every photograph becomes a
+            memory worth keeping. This website is our digital home for
+            those chapters.
+          </p>
+          <a href="#events" class="text-link">Discover what we do <span>→</span></a>
+        </div>
       </div>
+    </section>
 
-      <div class="card reveal">
-        <div class="icon">🕉️</div>
-        <h3>Ganesh Chaturthi</h3>
-        <p>Keep yearly celebration records, programs, idol photos and memories.</p>
-      </div>
-
-      <div class="card reveal">
-        <div class="icon">📸</div>
-        <h3>Gallery</h3>
-        <p>Store and display photographs and videos from M.G.FIRES activities.</p>
-      </div>
-
-      <div class="card reveal">
-        <div class="icon">📅</div>
-        <h3>Yearly History</h3>
-        <p>Create separate records for 2024, 2025, 2026 and future years.</p>
-      </div>
-
-      <div class="card reveal">
-        <div class="icon">🏆</div>
-        <h3>Achievements</h3>
-        <p>Record awards, important events and achievements of the organization.</p>
+    <section class="events section" id="events">
+      <div class="section-heading">
+        <div>
+          <div class="section-kicker">WHAT WE DO</div>
+          <h2>Moments that bring<br><em>us together.</em></h2>
+        </div>
+        <p>From celebrations to community activities, our journey is made of people and moments.</p>
       </div>
 
-      <div class="card reveal">
-        <div class="icon">📢</div>
-        <h3>Announcements</h3>
-        <p>Show upcoming programs, meetings and important organization updates.</p>
+      <div class="event-grid">
+        <article class="event-card event-large">
+          <div class="event-number">01</div>
+          <div class="event-icon">🕉️</div>
+          <h3>Ganesh Chaturthi</h3>
+          <p>Our annual celebration filled with devotion, energy, tradition and unforgettable memories.</p>
+          <a href="#memories" class="card-link">View memories →</a>
+        </article>
+
+        <article class="event-card">
+          <div class="event-number">02</div>
+          <div class="event-icon">👥</div>
+          <h3>Youth & Unity</h3>
+          <p>Friendship, teamwork and a community that grows together.</p>
+        </article>
+
+        <article class="event-card">
+          <div class="event-number">03</div>
+          <div class="event-icon">🎉</div>
+          <h3>Cultural Events</h3>
+          <p>Celebrating our culture and creating moments we remember.</p>
+        </article>
+
+        <article class="event-card">
+          <div class="event-number">04</div>
+          <div class="event-icon">📸</div>
+          <h3>Yearly Memories</h3>
+          <p>Every year gets its own chapter in the M.G.FIRES archive.</p>
+        </article>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="ganesh">
-    <div class="section-title reveal">
-      <span>Our Celebration</span>
-      <h2>Ganesh Chaturthi</h2>
-      <p>Our festival memories can become a permanent digital history of M.G.FIRES.</p>
-    </div>
-
-    <div class="gallery-grid reveal">
-      <img src="ganesh1.jpg" alt="M.G.FIRES Ganesh idol">
-      <img src="ganesh2.jpg" alt="M.G.FIRES Ganesh celebration">
-    </div>
-  </section>
-
-  <section class="join" id="join">
-    <div class="join-box reveal">
-      <div class="section-title" style="margin-bottom: 10px;">
-        <span>Become a Member</span>
-        <h2>Join M.G.FIRES 🔥</h2>
+    <section class="memories section" id="memories">
+      <div class="memories-head">
+        <div>
+          <div class="section-kicker">M.G.FIRES ARCHIVE</div>
+          <h2>Our <em>Memories.</em></h2>
+          <p>Tap a photograph to open it without leaving the website.</p>
+        </div>
+        <a class="archive-link" href="https://photos.app.goo.gl/5b56P3Ai7L6ievxy6" target="_blank" rel="noopener">
+          Full Google Photos Archive ↗
+        </a>
       </div>
 
-      <p>
-        Member registration will be connected to a secure authentication
-        system in the next version. For now, this is the public website
-        foundation.
-      </p>
+      <div class="filters" id="filters" aria-label="Photo years">
+        <button class="filter active" data-year="all">All</button>
+        <button class="filter" data-year="2026">2026</button>
+        <button class="filter" data-year="2025">2025</button>
+        <button class="filter" data-year="2024">2024</button>
+      </div>
 
-      <button class="btn" onclick="alert('Registration will be connected in the next version.')">
-        Register / Login
-      </button>
-    </div>
-  </section>
+      <div class="gallery" id="gallery" aria-live="polite"></div>
+
+      <div class="gallery-note">
+        <span>☁</span>
+        Photos are delivered through Cloudinary for fast, responsive viewing.
+      </div>
+    </section>
+
+    <section class="join section" id="join">
+      <div class="join-inner">
+        <div class="section-kicker">BE PART OF IT</div>
+        <h2>Make the next<br><em>memory with us.</em></h2>
+        <p>M.G.FIRES is built by people who show up, celebrate together and keep the spirit alive.</p>
+        <a class="btn btn-primary" href="mailto:mgfires@example.com">Connect with M.G.FIRES <span>↗</span></a>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <p>© <span id="year"></span> <strong>M.G.FIRES 🔥</strong> — Youth Organization</p>
+    <div class="footer-brand">M.G.FIRES <span>🔥</span></div>
+    <p>One group. One spirit. A lifetime of memories.</p>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> M.G.FIRES</span>
+      <a href="#top">Back to top ↑</a>
+    </div>
   </footer>
 
-  <script>
-    function toggleMenu() {
-      document.getElementById("navLinks").classList.toggle("open");
-    }
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close photo viewer">×</button>
+    <button class="lightbox-arrow prev" id="prevPhoto" aria-label="Previous photo">‹</button>
+    <div class="lightbox-content">
+      <img id="lightboxImage" src="" alt="">
+      <div class="lightbox-caption">
+        <span id="lightboxTitle"></span>
+        <span id="lightboxCounter"></span>
+      </div>
+    </div>
+    <button class="lightbox-arrow next" id="nextPhoto" aria-label="Next photo">›</button>
+  </div>
 
-    function closeMenu() {
-      document.getElementById("navLinks").classList.remove("open");
-    }
-
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        }
-      });
-    }, { threshold: 0.12 });
-
-    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
-  </script>
-
+  <script src="config.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
