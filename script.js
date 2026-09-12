@@ -435,7 +435,7 @@ const members = [
     {
         name: "Naveen",
         role: "Treasury",
-        photo: "members/dhanush.jpg"
+        photo: "members/naveen.jpg"
     }
 
 ];
