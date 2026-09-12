@@ -17,7 +17,8 @@ const GOOGLE_PHOTOS =
 // 2. GET HTML ELEMENTS
 // ======================================================
 
-const gallery = document.getElementById("gallery");
+const gallery =
+    document.getElementById("gallery");
 
 const statusEl =
     document.getElementById("galleryStatus");
@@ -29,7 +30,7 @@ const tabs =
     document.getElementById("yearTabs");
 
 
-// Cache loaded photos so we don't request them again
+// Cache loaded photos
 const cache = {};
 
 
@@ -39,12 +40,10 @@ const cache = {};
 
 function imgUrl(file) {
 
-    // GitHub download URL
     if (file.download_url) {
         return file.download_url;
     }
 
-    // Fallback GitHub Raw URL
     return `https://raw.githubusercontent.com/${REPO}/main/${
         file.path
             .split("/")
@@ -70,9 +69,9 @@ async function loadYear(year) {
 
     try {
 
-        // ----------------------------------------------
-        // Load photos from GitHub only if not cached
-        // ----------------------------------------------
+        // --------------------------------------------------
+        // Load from GitHub only if not already cached
+        // --------------------------------------------------
 
         if (!cache[year]) {
 
@@ -88,16 +87,19 @@ async function loadYear(year) {
 
 
             if (!response.ok) {
-                throw new Error("GitHub request failed");
+                throw new Error(
+                    "GitHub request failed"
+                );
             }
 
 
-            const files = await response.json();
+            const files =
+                await response.json();
 
 
-            // ------------------------------------------
-            // Keep only image files
-            // ------------------------------------------
+            // --------------------------------------------------
+            // Keep image files only
+            // --------------------------------------------------
 
             cache[year] = files
 
@@ -119,7 +121,6 @@ async function loadYear(year) {
         }
 
 
-        // Get cached photos
         const files = cache[year];
 
 
@@ -129,20 +130,24 @@ async function loadYear(year) {
 
         countEl.textContent =
             `${files.length} photo${
-                files.length === 1 ? "" : "s"
+                files.length === 1
+                    ? ""
+                    : "s"
             }`;
+
 
         statusEl.textContent =
             `${year} memories`;
 
 
         // ==================================================
-        // 6. NO PHOTOS MESSAGE
+        // 6. NO PHOTOS
         // ==================================================
 
         if (!files.length) {
 
             gallery.innerHTML = `
+
                 <div class="empty">
 
                     No photos added for ${year} yet.
@@ -150,10 +155,15 @@ async function loadYear(year) {
                     <br><br>
 
                     Add images to
-                    <strong>photos/${year}/</strong>
+
+                    <strong>
+                        photos/${year}/
+                    </strong>
+
                     on GitHub.
 
                 </div>
+
             `;
 
             return;
@@ -166,17 +176,18 @@ async function loadYear(year) {
 
         files.forEach((file, index) => {
 
-            const image = imgUrl(file);
+            const image =
+                imgUrl(file);
 
 
-            // Create photo button
             const button =
                 document.createElement("button");
 
-            button.className = "photo";
+
+            button.className =
+                "photo";
 
 
-            // Photo HTML
             button.innerHTML = `
 
                 <img
@@ -196,7 +207,6 @@ async function loadYear(year) {
             `;
 
 
-            // Open fullscreen image
             button.onclick = () => {
 
                 openLightbox(
@@ -207,7 +217,6 @@ async function loadYear(year) {
             };
 
 
-            // Add to gallery
             gallery.appendChild(button);
 
         });
@@ -239,8 +248,13 @@ async function loadYear(year) {
                 <small>
 
                     Make sure
-                    <strong>photos/${year}/</strong>
-                    exists and the repository is public.
+
+                    <strong>
+                        photos/${year}/
+                    </strong>
+
+                    exists and the repository
+                    is public.
 
                 </small>
 
@@ -274,8 +288,8 @@ function openLightbox(src, caption) {
     ).classList.add("open");
 
 
-    // Stop background scrolling
-    document.body.style.overflow = "hidden";
+    document.body.style.overflow =
+        "hidden";
 }
 
 
@@ -295,8 +309,8 @@ function closeLightbox() {
     ).src = "";
 
 
-    // Enable scrolling again
-    document.body.style.overflow = "";
+    document.body.style.overflow =
+        "";
 }
 
 
@@ -317,20 +331,25 @@ tabs.onclick = event => {
     }
 
 
-    // Remove active state
     tabs
         .querySelectorAll("button")
-        .forEach(item =>
-            item.classList.remove("active")
-        );
+        .forEach(item => {
+
+            item.classList.remove(
+                "active"
+            );
+
+        });
 
 
-    // Add active state
-    button.classList.add("active");
+    button.classList.add(
+        "active"
+    );
 
 
-    // Load selected year
-    loadYear(button.dataset.year);
+    loadYear(
+        button.dataset.year
+    );
 
 };
 
@@ -345,28 +364,35 @@ document.getElementById(
 
 
 // ======================================================
-// 13. CLOSE LIGHTBOX BY CLICKING OUTSIDE
+// 13. CLOSE LIGHTBOX OUTSIDE IMAGE
 // ======================================================
 
 document.getElementById(
     "lightbox"
 ).onclick = event => {
 
-    if (event.target.id === "lightbox") {
+    if (
+        event.target.id ===
+        "lightbox"
+    ) {
+
         closeLightbox();
+
     }
 
 };
 
 
 // ======================================================
-// 14. ESCAPE KEY CLOSES LIGHTBOX
+// 14. ESCAPE KEY
 // ======================================================
 
 document.onkeydown = event => {
 
     if (event.key === "Escape") {
+
         closeLightbox();
+
     }
 
 };
@@ -388,7 +414,7 @@ document.getElementById(
 
 
 // ======================================================
-// 16. CLOSE MOBILE MENU AFTER CLICKING LINK
+// 16. CLOSE MOBILE MENU
 // ======================================================
 
 document
@@ -399,7 +425,9 @@ document
 
             document.getElementById(
                 "nav"
-            ).classList.remove("open");
+            ).classList.remove(
+                "open"
+            );
 
         };
 
@@ -407,12 +435,13 @@ document
 
 
 // ======================================================
-// 17. CURRENT YEAR IN FOOTER
+// 17. CURRENT YEAR
 // ======================================================
 
 document.getElementById(
     "year"
-).textContent = new Date().getFullYear();
+).textContent =
+    new Date().getFullYear();
 
 
 // ======================================================
@@ -432,66 +461,155 @@ const members = [
         role: "Technical",
         photo: "members/chidvilas.jpg"
     },
+
     {
         name: "Naveen",
         role: "Treasury",
         photo: "members/naveen.jpg"
     }
 
+    // --------------------------------------------------
+    // ADD FUTURE MEMBERS HERE
+    // --------------------------------------------------
+
+    // {
+    //     name: "Member Name",
+    //     role: "Role",
+    //     photo: "members/member-name.jpg"
+    // }
+
 ];
 
 
 // ======================================================
-// 19. LOAD MEMBER PHOTOS
+// 19. CREATE MEMBER CARDS AUTOMATICALLY
 // ======================================================
 
-members.forEach((member, index) => {
-
-    const box =
-        document.querySelectorAll(
-            ".member-photo"
-        )[index];
+const memberGrid =
+    document.querySelector(
+        ".member-grid"
+    );
 
 
-    // If member card doesn't exist
-    if (!box) {
+function loadMembers() {
+
+    if (!memberGrid) {
         return;
     }
 
 
-    const image =
-        new Image();
+    // Clear existing cards
+    memberGrid.innerHTML = "";
 
 
-    image.onload = () => {
+    // Create a card for every member
+    members.forEach(member => {
 
-        box.classList.remove(
-            "initials"
+        const card =
+            document.createElement(
+                "article"
+            );
+
+
+        card.className =
+            "member-card";
+
+
+        card.innerHTML = `
+
+            <div class="member-photo initials">
+
+                <span>
+                    ${member.name
+                        .trim()
+                        .charAt(0)
+                        .toUpperCase()}
+                </span>
+
+            </div>
+
+
+            <div class="member-info">
+
+                <h3>
+                    ${member.name}
+                </h3>
+
+                <span>
+                    ${member.role.toUpperCase()}
+                </span>
+
+            </div>
+
+        `;
+
+
+        const photoBox =
+            card.querySelector(
+                ".member-photo"
+            );
+
+
+        const image =
+            new Image();
+
+
+        image.onload = () => {
+
+            photoBox.classList.remove(
+                "initials"
+            );
+
+
+            photoBox.textContent =
+                "";
+
+
+            image.alt =
+                `${member.name} — M.G.FIRES`;
+
+
+            photoBox.appendChild(
+                image
+            );
+
+        };
+
+
+        image.onerror = () => {
+
+            console.warn(
+                `Member photo not found: ${member.photo}`
+            );
+
+        };
+
+
+        image.src =
+            member.photo;
+
+
+        memberGrid.appendChild(
+            card
         );
 
+    });
 
-        box.textContent = "";
-
-
-        image.alt =
-            `${member.name} — M.G.FIRES`;
-
-
-        box.appendChild(image);
-
-    };
-
-
-    image.src = member.photo;
-
-});
+}
 
 
 // ======================================================
-// 20. START WEBSITE
+// 20. LOAD MEMBERS
 // ======================================================
 
-// Change this to the year you want
-// to display when the website opens.
+loadMembers();
+
+
+// ======================================================
+// 21. START WEBSITE
+// ======================================================
+
+// Change 2025 if you want another year
+// to open automatically.
 
 loadYear(2025);
