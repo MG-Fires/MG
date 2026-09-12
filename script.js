@@ -451,20 +451,38 @@ document.getElementById(
 const members = [
 
     {
-        name: "Dhanush",
-        role: "Editor",
+        name: "Babu",
+        role: "Member",
         photo: "members/dhanush.jpg"
     },
-
     {
-        name: "Chidvilas",
-        role: "Technical",
+        name: "Santhosh",
+        role: "Member",
         photo: "members/chidvilas.jpg"
     },
-
+    {
+        name: "Kishore",
+        role: "Member",
+        photo: "members/chidvilas.jpg"
+    },
+    {
+        name: "Giri",
+        role: "Member",
+        photo: "members/chidvilas.jpg"
+    },
+    {
+        name: "Venky",
+        role: "Member",
+        photo: "members/chidvilas.jpg"
+    },
     {
         name: "Naveen",
-        role: "Treasury",
+        role: "Member",
+        photo: "members/naveen.jpg"
+    },
+    {
+        name: "Naveen",
+        role: "Member",
         photo: "members/naveen.jpg"
     }
 
