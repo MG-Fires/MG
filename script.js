@@ -431,6 +431,11 @@ const members = [
         name: "Chidvilas",
         role: "Technical",
         photo: "members/chidvilas.jpg"
+    },
+    {
+        name: "Naveen",
+        role: "Treasury",
+        photo: "members/dhanush.jpg"
     }
 
 ];
