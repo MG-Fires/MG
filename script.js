@@ -452,39 +452,119 @@ const members = [
 
     {
         name: "Babu",
-        role: "Member",
-        photo: "members/dhanush.jpg"
+        role: "President",
+        photo: "members/babu.jpg"
     },
-    {
-        name: "Santhosh",
-        role: "Member",
-        photo: "members/chidvilas.jpg"
-    },
+
     {
         name: "Kishore",
         role: "Member",
-        photo: "members/chidvilas.jpg"
+        photo: "members/kishore.jpg"
     },
+
     {
-        name: "Giri",
+        name: "Naveen",
+        role: "Member",
+        photo: "members/naveen.jpg"
+    },
+
+    {
+        name: "Santhosh",
+        role: "Member",
+        photo: "members/santhosh.jpg"
+    },
+
+    {
+        name: "Balaji",
+        role: "Member",
+        photo: "members/balaji.jpg"
+    },
+
+    {
+        name: "Chidvilas",
         role: "Member",
         photo: "members/chidvilas.jpg"
     },
+
+    {
+        name: "Indrajith",
+        role: "Member",
+        photo: "members/indrajith.jpg"
+    },
+
+    {
+        name: "Jyothish",
+        role: "Member",
+        photo: "members/jyothish.jpg"
+    },
+
+    {
+        name: "Akhil",
+        role: "Member",
+        photo: "members/akhil.jpg"
+    },
+
+    {
+        name: "Chandu",
+        role: "Member",
+        photo: "members/chandu.jpg"
+    },
+
+    {
+        name: "Dhanush",
+        role: "Member",
+        photo: "members/dhanush.jpg"
+    },
+
+    {
+        name: "Gnana",
+        role: "Member",
+        photo: "members/gnana.jpg"
+    },
+
+    {
+        name: "Teja",
+        role: "Member",
+        photo: "members/teja.jpg"
+    },
+
+    {
+        name: "Uday",
+        role: "Member",
+        photo: "members/uday.jpg"
+    },
+
+    {
+        name: "Uttham",
+        role: "Member",
+        photo: "members/uttham.jpg"
+    },
+
     {
         name: "Venky",
         role: "Member",
-        photo: "members/chidvilas.jpg"
+        photo: "members/venky.jpg"
     },
+
     {
-        name: "Naveen",
+        name: "Rahul",
         role: "Member",
-        photo: "members/naveen.jpg"
+        photo: "members/rahul.jpg"
     },
+
     {
-        name: "Naveen",
+        name: "Rajesh",
         role: "Member",
-        photo: "members/naveen.jpg"
+        photo: "members/rajesh.jpg"
+    },
+
+    {
+        name: "Giri",
+        role: "Member",
+        photo: "members/giri.jpg"
     }
+
+];
 
     // --------------------------------------------------
     // ADD FUTURE MEMBERS HERE
@@ -495,8 +575,6 @@ const members = [
     //     role: "Role",
     //     photo: "members/member-name.jpg"
     // }
-
-];
 
 
 // ======================================================
